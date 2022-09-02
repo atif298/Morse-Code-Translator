@@ -73,5 +73,3 @@ describe('Testing translateToMorse', () => {
 // - Extension - Other languages available other than English
 
 // Should we have a translateToEnglish translate?
-
-//
