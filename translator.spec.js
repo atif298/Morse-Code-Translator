@@ -64,9 +64,6 @@ describe('Testing translateToMorse', () => {
 
 })
 
-  
-
-
 // What should translateToMorse function actually be able to do?
 
 // - Recieve letters and translate those letters to morse code
