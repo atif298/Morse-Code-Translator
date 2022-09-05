@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  background-color: #343434;
+  color: #FFFF;
+}
+
+.translation {
+  display: grid;
+  height: 80vh;
+  width: 100vw;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas: "translation__input" "translation__button" "translation__translated";
+}
+.translation__input {
+  grid-area: translation__input;
+  text-align: center;
+  padding: 0.5rem;
+  width: 100%;
+  overflow-x: scroll;
+}
+.translation__button {
+  grid-area: translation__button;
+  width: 90%;
+  background-color: #2f8aad;
+  margin: auto;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.translation__button:hover {
+  background-color: #00a560;
+}
+.translation__translated {
+  grid-area: translation__translated;
+  padding: 0.5rem;
+  text-align: center;
+}

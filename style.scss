@@ -1,0 +1,62 @@
+$white: #FFFF;
+$grey: #7c7c7c;
+$dark-grey: #555555;
+$blue: #2f8aad;
+$green: #00a560;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    background-color: #343434;
+    color: $white;
+}
+
+
+.translation {  
+    display: grid;
+    height: 80vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+        "translation__input"
+        "translation__button"
+        "translation__translated";
+    
+      
+    &__input {
+        grid-area: translation__input;
+        text-align: center;
+        padding: 0.5rem;
+        width: 100%;
+        overflow-x: scroll;
+
+    }
+
+    &__button {
+        grid-area: translation__button;
+        width: 90%;
+        background-color: $blue;
+        margin: auto;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition:all 200ms ease-in;
+    
+
+        &:hover {
+            background-color: $green;
+        }   
+    }
+
+    &__translated {
+        grid-area: translation__translated;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+}
