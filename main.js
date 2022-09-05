@@ -68,6 +68,10 @@ const translateToMorse = (str) => {
         
     //Morse to English
     } else {
+        if (string.includes("_")) {
+            //replaces _ with -
+            string = string.replaceAll("_", "-");
+        }
         const morseToEnglish = (englishToMorse, string) => {
             return Object.keys(englishToMorse).find(morse => englishToMorse[morse] === string);
         }
