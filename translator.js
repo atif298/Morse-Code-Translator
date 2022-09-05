@@ -1,59 +1,34 @@
-const englishToMorse = {
-    "a": ".-",
-    "b": "-...",
-    "c": "-.-.",
-    "d": "-..",
-    "e": ".",
-    "f": "..-.",
-    "g": "--.",
-    "h": "....",
-    "i": "..",
-    "j": ".---",
-    "k": "-.-",
-    "l": ".-..",
-    "m": "--",
-    "n": "-.",
-    "o": "---",
-    "p": ".--.",
-    "q": "--.-",
-    "r": ".-.",
-    "s": "...",
-    "t": "-",
-    "u": "..-",
-    "w": ".--",
-    "x": "-..-",
-    "y": "-.--",
-    "z": "--..",
-    "0":"-----",
-    "1":".----",
-    "2":"..---",
-    "3":"...--",
-    "4":"....-",
-    "5":".....",
-    "6":"-....",
-    "7":"--...",
-    "8":"---..",
-    "9":"----.",
-    " ":"/",
-    "!":"-.-.--",
-    ".":".-.-.-",
-    ",":"--..--",
-    "?":"..--..",
-    '"':'.-..-.',
-    "&":".-...",
-    "(":"-.--.",
-    ")":"-.--.-",
-    "/":"-..-.",
-    "@":".--.-.",
-    ":":"---...",
-    "'":".----.",
-    "-":"T",
-    "_":"T",
-    "+":".-.-.",
-    "=":"-...-"
-}
+import { englishToMorse } from "./english-morse-alphabet";
 
-export const translateToMorse = () => {
+let inputed = "hello my name is =5"
 
-}
+export const translateToMorse = (str) => {
+    let string = str.toString();
+    //English to Morse
+    //if string matches any letter from within [] (i = non case-sesnsitive)
+    if (/[a-z0-9|!,?"&()@:'+=]/i.test(string) || string == " ") {
+        //Creates array of singular characters in lowercase
+        let stringArray = string.toUpperCase().split("");
+        //Creates map array of the values according to the characters(keys) 
+        let result = stringArray.map((letter) => {
+            return englishToMorse[letter];
+        });
+        return result.join(" ");
+        
+    //Morse to English
+    } else {
+        const morseToEnglish = (englishToMorse, string) => {
+            //.find - string is equialent to value
+            return Object.keys(englishToMorse).find(morse => englishToMorse[morse] === string);
+        }
+        //Letters in morse are seperated by a space
+        let stringArray = string.split(" ");
+        //Creates map array of the values according to the morse letters(values) 
+        let result = stringArray.map((morse) => {
+            return morseToEnglish(englishToMorse, morse);
+        });
+        return result.join("");
+    };
+};
 
+console.log(translateToMorse(inputed));
