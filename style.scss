@@ -35,6 +35,10 @@ $green: #00a560;
         width: 100%;
         overflow-x: scroll;
 
+        &:focus {
+            outline: none;
+          }
+
     }
 
     &__button {

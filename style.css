@@ -24,6 +24,9 @@
   width: 100%;
   overflow-x: scroll;
 }
+.translation__input:focus {
+  outline: none;
+}
 .translation__button {
   grid-area: translation__button;
   width: 90%;

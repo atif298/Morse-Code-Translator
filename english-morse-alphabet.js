@@ -1,4 +1,4 @@
-//Aplhabet, Numerics and Symbols
+//Alphabet, Numerics and Symbols
 export const englishToMorse = {
     "A": ".-",
     "B": "-...",
